@@ -1,0 +1,24 @@
+syntax="proto3";
+
+service ProductManager
+{
+    rpc sell(sellRequest) returns (sellResponse);
+    rpc buy(Empty) returns (buyResponse);
+}
+
+message sellRequest
+{
+    int32 id = 1;
+}
+
+message sellResponse
+{
+    bool success = 1;
+}
+
+message Empty{}
+
+message buyResponse
+{
+    int32 id = 1;
+}
